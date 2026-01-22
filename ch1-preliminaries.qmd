@@ -246,3 +246,248 @@ Proof:
 
 ## The Beta Function (cont)
 
+# 1.4 Minimums and Maximums
+
+## Order statistics notation
+
+Let $X_1, X_2, \ldots, X_n$ denote a sample of observations. The order statistics are denoted as:
+
+- $X_{(1)} = \min(X_1, X_2, \ldots, X_n)$.
+- $X_{(2)} = \text{2nd smallest of }X_1, X_2, \ldots, X_n$.
+- $X_{(n)} = \max(X_1, X_2, \ldots X_n)$.
+
+# 1.4.2 The distribution of a minimum by example
+
+## Example 1.4.1
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim}\text{Exponential}(\lambda)$. Determine the distribution of $X_{(1)}$.
+
+## Example 1.4.1 (cont)
+
+## Example 1.4.1 (cont)
+
+## Example 1.4.1 (cont)
+
+## Example 1.4.1 (cont)
+
+# 1.4.3 The general distribution of minimums and maximums
+
+## Distribution of the minimum
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from a continuous distribution. Determine the distribution of $X_{(1)}$.
+
+## Distribution of the minimum (cont)
+
+## Distribution of the minimum (cont)
+
+## Distribution of the minimum (cont)
+
+## PDF for a minimum
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from a continuous distribution with pdf $f$ and cdf $X$. 
+
+The pdf for $X_{(1)}$ is
+$$
+f_{X_{(1)}} = n [1 - F(x)]^{n-1} f(x).
+$$
+
+## Distribution of the maximum
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from a continuous distribution. Determine the distribution of $X_{(n)}$.
+
+## Distribution of the maximum (cont)
+
+## Distribution of the maximum (cont)
+
+## Distribution of the maximum (cont)
+
+## PDF for a maximum
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from a continuous distribution with pdf $f$ and cdf $X$. 
+
+The pdf for $X_{(n)}$ is
+$$
+f_{X_{(n)}} = n [F(x)]^{n-1} f(x).
+$$
+
+# 1.5 Moment Generating Functions (mgfs)
+
+## Definition of the mgf
+
+The moment generating function (mgf) of a random variable $X$ is
+$$
+M_X(t) = E[e^{tX}].
+$$
+
+## Uses of mgfs
+
+Mgfs are often useful in two settings:
+
+1. Determining the distribution of a transformation of 1 or more random variables (particularly the sum of $n$ i.i.d. random variables.)
+2. Determine the "moments" of a random variable, i.e., $E(X), E(X^2), E(X^3), \ldots$.
+
+# 1.5.1 The expectation of a function $X$
+
+## Example 1.5.1
+
+Suppose the random variable $X$ has the following distribution.
+
+| $x$ | -1 | 0 | 1
+| :--- | :--- | :--- | :--- |
+| $f(x)$ | 4/12 | 3/12 | 5/12
+
+Determine $E(X^2)$.
+
+## Example 1.5.1 (cont)
+
+## Example 1.5.1 (cont)
+
+## Law of the Unconscious Statistician
+
+If $X$ is a discrete random variable, then 
+$$
+E[g(X)] = \sum_x g(x) f_X(x),
+$$
+where $f_X(x)$ is the pmf of $X$.
+
+
+If $X$ is a continuous random variable, then 
+$$
+E[g(X)] = \int_{-\infty}^{\infty} g(x) f_X(x)\,dx,
+$$
+where $f_X(x)$ is the pdf of $X$.
+
+## Proof (specific case)
+
+## Proof (specific case)
+
+## Proof (specific case)
+
+## Proof (specific case)
+
+# 1.5.2 Finding mgfs and the Poisson distribution
+
+## The Poisson distribution
+
+A discrete random variable $X\sim\text{Poisson}(\lambda)$ if it has the pmf
+$$
+f_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}I_{\{0,1,2,\ldots\}}(x).
+$$
+
+## Poisson interpretation
+
+A Poisson random variable can be thought of as the number of arrivals observed in a fixed amount of time where:
+
+1. The mean time between arrivals is constant.
+2. The number of arrivals in non-overlapping time periods are independent. 
+
+## Example 1.5.2 
+
+Determine the mgf for the Poisson distribution
+
+## Example 1.5.2 (cont)
+
+## Example 1.5.2 (cont)
+
+## Example 1.5.3
+
+Suppose that $X\sim\text{Exponential}(\lambda)$. Determine the mgf of $X$.
+
+## Example 1.5.3 (cont)
+
+## Example 1.5.3 (cont)
+
+## Example 1.5.4
+
+Suppose that $X\sim N(\mu, \sigma^2)$ with pdf
+$$
+f_X(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{1}{2\sigma^2}(x-\mu)^2\right].
+$$
+Determine the mgf of $X$.
+
+## Example 1.5.4 (cont)
+
+## Example 1.5.4 (cont)
+
+## Example 1.5.4 (cont)
+
+# 1.5.3 Finding moments
+
+## Defining moments
+
+The **moments** of a random variable $X$ are expectations of the form $E(X^k)$ for $k=1,2,3,\ldots$.
+
+## Computing moments
+
+The $k$th moment of a random variable $X$ can be computed as $M^{(k)}_X(0)$, where $M^{(k)}_X(0)$ is the $k$th derivative of the mgf of $X$ evaluated at zero.
+
+## Mgf moment proof
+
+## Mgf moment proof (cont) 
+
+## Mgf moment proof (cont)
+
+# 1.5.4 The mgf uniquely determines a distribution
+
+## The DNA of the mgf
+
+The mgf of a random variable uniquely determines its distribution.
+
+Example: If we find the mgf of a random variable $X$ is $\exp[15(e^t - 1)]$, then $X\sim\text{Poisson}(15)$ since it matches the mgf of a Poisson random variable with $\lambda = 15$.
+
+# 1.5.6 Sums of iid random variables
+
+## Mgf of sum of independent r.v.s
+
+Let $X_1, X_2, \ldots, X_n$ be independent random variables. The mgf of
+$$
+Y:=\sum_{i=1}^n X_i
+$$
+is 
+$$
+M_Y(t) = \prod_{i=1}^n M_{X_i}(t).
+$$
+
+## Proof
+
+## Proof (cont)
+
+## Proof (cont)
+
+## Mgf of sum of i.i.d. r.v.s
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}F$. The mgf of
+$$
+Y:=\sum_{i=1}^n X_i
+$$
+is 
+$$
+M_Y(t) = [M_{X}(t)]^n.
+$$
+
+## Example 1.5.6
+
+Suppose that $X_1,X_2,\ldots,X_n\stackrel{i.i.d.}{\sim}\text{Poisson}(\lambda)$. Determine the distribution of $Y:=\sum_{i=1}^n X_i$.
+
+## Example 1.5.6 (cont)
+
+## Example 1.5.6 (cont)
+
+## Example 1.5.7
+
+Suppose that $X_1,X_2,\ldots,X_n\stackrel{i.i.d.}{\sim}\text{Exponential}(\lambda)$. Determine the distribution of $Y:=\sum_{i=1}^n X_i$.
+
+## Example 1.5.7 (cont)
+
+## Example 1.5.7 (cont)
+
+## Example 1.5.8
+
+Suppose that $X_1,X_2,\ldots,X_n$ be independent random variables with $X_i\sim\text{Poisson}(\lambda_i)$. Determine the distribution of $Y:=\sum_{i=1}^n X_i$.
+
+## Example 1.5.8 (cont)
+
+## Example 1.5.8 (cont)
+
+## Example 1.5.8 (cont)
+
