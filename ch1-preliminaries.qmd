@@ -427,6 +427,14 @@ The $k$th moment of a random variable $X$ can be computed as $M^{(k)}_X(0)$, whe
 
 ## Mgf moment proof (cont)
 
+## Example 1.5.5
+
+Determine the mean and variance of the $\text{Poisson}(\lambda)$ distribution.
+
+## Example 1.5.5 (cont)
+
+## Example 1.5.5 (cont)
+
 # 1.5.4 The mgf uniquely determines a distribution
 
 ## The DNA of the mgf
@@ -490,4 +498,68 @@ Suppose that $X_1,X_2,\ldots,X_n$ be independent random variables with $X_i\sim\
 ## Example 1.5.8 (cont)
 
 ## Example 1.5.8 (cont)
+
+# 1.6 General Order Statistics
+
+# 1.6.2 The joint distribution of the minimum and maximum
+
+## Min/Max cdf
+
+For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with cdf $F$, the joint cdf of $(X_{(1)}, X_{(n)})$ is
+$$
+F_{X_{(1)}, X_{(n)}}(x, y) = [F(y)]^n - [F(y) - F(x)]^n,
+$$
+for $x<y$. 
+
+## Proof of min/max cdf
+
+## Proof of min/max cdf (cont)
+
+## Proof of min/max cdf (cont)
+
+## Min/Max pdf
+
+## Example 1.6.1
+
+Determine the joint pdf of $(X_{(1)}, X_{(15)})$ when $X_1, X_2, \ldots, X_15 \stackrel{i.i.d.}{\sim}\text{Uniform}(0, 1)$.
+
+## Example 1.6.1 (cont)
+
+# 1.6.4 The distribution of $X_{(i)}$.
+
+## CDF of $X_{(i)}$
+
+For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with cdf $F$, the cdf of $X_{(i)}$ is
+$$
+F_{X_{(i)}}(x) = P(X_{(i)}\leq x) = \sum_{j=i}^n \binom{n}{j}(1-F(x))^{n-j}F(x)^j.
+$$
+
+## Proof
+
+## Proof (cont)
+
+
+## The PDF of $X_{(i)}$
+
+For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with cdf $F$, the pdf of $X_{(i)}$ is
+$$
+f_{X_{(i)}}(x) = \frac{n!}{(i-1)!(n-i)!}F(x)^{i-1}(1-F(x))^{n-k}f(x).
+$$
+
+## Proof
+
+## Proof (cont)
+
+## Proof (cont)
+
+# 1.6.5 The joint distribution of $X_{(i)}$ and $X_{(j)}$
+
+## The joint pdf of $X_{(i)}$ and $X_{(j)}$
+
+For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with cdf $F$, the joint pdf of $(X_{(i)},X_{(i)})$ is 
+\begin{align}
+&f_{X_{(i)},X_{(j)}}(x_i, x_j)\\
+&= \frac{n!}{(i-1)!(j-i-1)!(n-j)!}F(x_i)^{i-1}f(x_i)\\
+&\quad\times[F(x_j)-F(x_i)]^{j-i-1}f(x_j)[1-F(x_j)]^{n-j}I_{(-\infty,x_j)}(x_i).
+\end{align}
 
