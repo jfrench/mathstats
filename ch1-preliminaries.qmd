@@ -5,9 +5,15 @@ self-contained: true
 
 # Chapter 1
 
+::: {style="font-size: 200%;"}
 MathStat Preliminaries
+:::
 
-## 1.1 Wait. Where are we going?
+# 1.1
+
+::: {style="font-size: 200%;"}
+Wait. Where are we going?
+:::
 
 ## Exponential pdf
 
@@ -47,7 +53,11 @@ hist(rexp(1000, rate = 15.2), xlab = "x", probability = TRUE, main = "", ylim = 
 lines(x, dexp(x, rate = 15.2))
 ```
 
-# 1.1.1 A very special trick
+# 1.1.1
+
+::: {style="font-size: 200%;"}
+A very special trick
+:::
 
 ## Approach
 
@@ -60,9 +70,17 @@ $$
 
 ## Special trick (cont)
 
-# 1.2 Transformations of Random Variables
+# 1.2
 
-# 1.2.1 The discrete case and the binomial distribution
+::: {style="font-size: 200%;"}
+Transformations of Random Variables
+:::
+
+# 1.2.1
+
+::: {style="font-size: 200%;"}
+The discrete case and the binomial distribution
+:::
 
 ## The binomial pmf
 
@@ -79,7 +97,11 @@ Determine the pmf of $Y:=n-X$.
 
 ##
 
-# 1.2.2 The Continuous Case and the Gamma Distribution
+# 1.2.2
+
+::: {style="font-size: 200%;"}
+The Continuous Case and the Gamma Distribution
+:::
 
 ## Continous Transformation PDF
 
@@ -153,7 +175,11 @@ $$
 
 ## The Gamma Function (cont)
 
-# 1.3 Bivariate Transformations
+# 1.3
+
+::: {style="font-size: 200%;"}
+Bivariate Transformations
+:::
 
 ## Bivariate Transformation PDF
 
@@ -246,7 +272,11 @@ Proof:
 
 ## The Beta Function (cont)
 
-# 1.4 Minimums and Maximums
+# 1.4
+
+::: {style="font-size: 200%;"}
+Minimums and Maximums
+:::
 
 ## Order statistics notation
 
@@ -256,7 +286,11 @@ Let $X_1, X_2, \ldots, X_n$ denote a sample of observations. The order statistic
 - $X_{(2)} = \text{2nd smallest of }X_1, X_2, \ldots, X_n$.
 - $X_{(n)} = \max(X_1, X_2, \ldots X_n)$.
 
-# 1.4.2 The distribution of a minimum by example
+# 1.4.2
+
+::: {style="font-size: 200%;"}
+The distribution of a minimum by example
+:::
 
 ## Example 1.4.1
 
@@ -270,7 +304,11 @@ Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim}\text{Exponential}(\lambda)$. 
 
 ## Example 1.4.1 (cont)
 
-# 1.4.3 The general distribution of minimums and maximums
+# 1.4.3
+
+::: {style="font-size: 200%;"}
+The general distribution of minimums and maximums
+:::
 
 ## Distribution of the minimum
 
@@ -310,7 +348,11 @@ $$
 f_{X_{(n)}} = n [F(x)]^{n-1} f(x).
 $$
 
-# 1.5 Moment Generating Functions (mgfs)
+# 1.5
+
+::: {style="font-size: 200%;"}
+Moment Generating Functions (mgfs)
+:::
 
 ## Definition of the mgf
 
@@ -326,7 +368,11 @@ Mgfs are often useful in two settings:
 1. Determining the distribution of a transformation of 1 or more random variables (particularly the sum of $n$ i.i.d. random variables.)
 2. Determine the "moments" of a random variable, i.e., $E(X), E(X^2), E(X^3), \ldots$.
 
-# 1.5.1 The expectation of a function $X$
+# 1.5.1
+
+::: {style="font-size: 200%;"}
+The expectation of a function $X$
+:::
 
 ## Example 1.5.1
 
@@ -365,7 +411,11 @@ where $f_X(x)$ is the pdf of $X$.
 
 ## Proof (specific case)
 
-# 1.5.2 Finding mgfs and the Poisson distribution
+# 1.5.2
+
+::: {style="font-size: 200%;"}
+Finding mgfs and the Poisson distribution
+:::
 
 ## The Poisson distribution
 
@@ -411,7 +461,11 @@ Determine the mgf of $X$.
 
 ## Example 1.5.4 (cont)
 
-# 1.5.3 Finding moments
+# 1.5.3
+
+::: {style="font-size: 200%;"}
+Finding moments
+:::
 
 ## Defining moments
 
@@ -435,7 +489,11 @@ Determine the mean and variance of the $\text{Poisson}(\lambda)$ distribution.
 
 ## Example 1.5.5 (cont)
 
-# 1.5.4 The mgf uniquely determines a distribution
+# 1.5.4
+
+::: {style="font-size: 200%;"}
+The mgf uniquely determines a distribution
+:::
 
 ## The DNA of the mgf
 
@@ -443,7 +501,11 @@ The mgf of a random variable uniquely determines its distribution.
 
 Example: If we find the mgf of a random variable $X$ is $\exp[15(e^t - 1)]$, then $X\sim\text{Poisson}(15)$ since it matches the mgf of a Poisson random variable with $\lambda = 15$.
 
-# 1.5.6 Sums of iid random variables
+# 1.5.6
+
+::: {style="font-size: 200%;"}
+Sums of iid random variables
+:::
 
 ## Mgf of sum of independent r.v.s
 
@@ -499,9 +561,17 @@ Suppose that $X_1,X_2,\ldots,X_n$ be independent random variables with $X_i\sim\
 
 ## Example 1.5.8 (cont)
 
-# 1.6 General Order Statistics
+# 1.6
 
-# 1.6.2 The joint distribution of the minimum and maximum
+::: {style="font-size: 200%;"}
+General Order Statistics
+:::
+
+# 1.6.2
+
+::: {style="font-size: 200%;"}
+The joint distribution of the minimum and maximum
+:::
 
 ## Min/Max cdf
 
@@ -509,7 +579,11 @@ For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with
 $$
 F_{X_{(1)}, X_{(n)}}(x, y) = [F(y)]^n - [F(y) - F(x)]^n,
 $$
-for $x<y$. 
+for $x<y$ and
+$$
+F_{X_{(1)}, X_{(n)}}(x, y) = [F(y)]^n
+$$
+for $x\geq y$.
 
 ## Proof of min/max cdf
 
@@ -519,13 +593,47 @@ for $x<y$.
 
 ## Min/Max pdf
 
+For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with cdf $F$, the joint pdf of $(X_{(1)}, X_{(n)})$ is
+$$
+f_{X_{(1)}, X_{(n)}}(x, y) = n(n-1)[[F(y) - F(x)]^{n-2}f(x)f(y),
+$$
+for $x<y$.
+
+## Proof of min/max pdf
+
 ## Example 1.6.1
 
-Determine the joint pdf of $(X_{(1)}, X_{(15)})$ when $X_1, X_2, \ldots, X_15 \stackrel{i.i.d.}{\sim}\text{Uniform}(0, 1)$.
+Determine the joint pdf of $(X_{(1)}, X_{(15)})$ when $X_1, X_2, \ldots, X_{15} \stackrel{i.i.d.}{\sim}\text{Uniform}(0, 1)$.
 
 ## Example 1.6.1 (cont)
 
-# 1.6.4 The distribution of $X_{(i)}$.
+# 1.6.3
+
+::: {style="font-size: 200%;"}
+The distribution of all order statistics
+:::
+
+## PDF of all order statistics
+
+For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with pdf $f$, the pdf of all $n$ order statistics is
+\begin{align}
+&f_{X_{(1)}, X_{(2)}, \ldots, X_{(n)}}(x_1, x_2, \ldots, x_n)\\
+&= n!f(x_1)f(x_2)\cdots f(x_n)I(x_1<x_2<\cdots<x_{n-1}<x_n).
+\end{align}
+
+## Proof
+
+## Proof
+
+## Proof
+
+## Proof
+
+# 1.6.4
+
+::: {style="font-size: 200%;"}
+The distribution of $X_{(i)}$
+:::
 
 ## CDF of $X_{(i)}$
 
@@ -537,7 +645,6 @@ $$
 ## Proof
 
 ## Proof (cont)
-
 
 ## The PDF of $X_{(i)}$
 
@@ -552,7 +659,11 @@ $$
 
 ## Proof (cont)
 
-# 1.6.5 The joint distribution of $X_{(i)}$ and $X_{(j)}$
+# 1.6.5
+
+::: {style="font-size: 200%;"}
+The joint distribution of $X_{(i)}$ and $X_{(j)}$
+:::
 
 ## The joint pdf of $X_{(i)}$ and $X_{(j)}$
 
@@ -562,4 +673,3 @@ For an i.i.d. sample of continuous random variables $X_1, X_2, \ldots, X_n$ with
 &= \frac{n!}{(i-1)!(j-i-1)!(n-j)!}F(x_i)^{i-1}f(x_i)\\
 &\quad\times[F(x_j)-F(x_i)]^{j-i-1}f(x_j)[1-F(x_j)]^{n-j}I_{(-\infty,x_j)}(x_i).
 \end{align}
-
