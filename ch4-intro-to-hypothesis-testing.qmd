@@ -1,0 +1,390 @@
+---
+format: revealjs
+self-contained: true
+---
+
+# Chapter 4
+
+::: {style="font-size: 200%;"}
+A "Mostly Normal" Introduction to Hypothesis Testing
+:::
+
+## Introduction
+
+A **hypothesis test** uses an estimator to make a decision about a population parameter.
+
+This chapter will focus on the principles and mechanics of deriving a hypothesis test.
+
+# 4.1
+
+::: {style="font-size: 200%;"}
+Getting Started, Some Intuition
+:::
+
+## A story
+
+Suppose $X_1, X_2,\ldots,X_n \stackrel{i.i.d.}{
+\sim}N(\mu, \sigma^2)$, and we observe $\bar{x}=3.7$.
+
+We wish to decide whether $\mu\leq 3$ or $\mu > 3$ based on our observed data.
+
+We will set up two hypotheses, $H_0$ and $H_1$, that are written as
+$$
+H_0: \mu\leq 3\quad\text{versus}\quad H_1: \mu > 3.
+$$
+
+## Definition 4.1.1
+
+$H_0$ is called a **null hypothesis**.
+
+- It is the hypothesis that is assumed to be true, initially.
+
+$H_1$ is called an **alternative hypothesis**.
+
+- This hypothesis states what we will conclude to be true if we are swayed by strong evidence from the sample.
+
+## More thoughts
+
+Even if $\bar{x} > 3$, we may not want to conclude $H_1$ is true.
+
+We are assuming that $H_0$ is true. How much evidence is needed to convince us that $H_0$ is incorrect and $H_1$ is true?
+
+# 4.2
+
+::: {style="font-size: 200%;"}
+Hypotheses: Simple or Composite?
+:::
+
+## Simple Hypotheses
+
+A **simple hypothesis** completely specifies the data's distribution.
+
+- E.g., $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}N(\mu, 1)$ and the null hypothesis is $H_0: \mu = 3$.
+- If $H_0$ is true, then the random sample comes from a $N(3, 1)$ distribution.
+
+## Composite Hypotheses
+
+A **composite hypothesis** is one that does not completely specify the data's distribution.
+
+- E.g., $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}N(\mu, 1)$ and the null hypothesis is $H_0: \mu \leq 3$. If $H_0$ is true, then the random sample could come from a $N(-1, 1)$ distribution or a $N(-79,1)$ distribution.
+- E.g., $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}N(\mu, \sigma^2)$ and the null hypothesis is $H_0: \mu= 3$. If $H_0$ is true, then the random sample could come from a $N(3, 1)$ distribution or a $N(3,27)$ distribution.
+
+## 
+
+# 4.3
+
+::: {style="font-size: 200%;"}
+Errors in Hypothesis Testing for a Simple Null Hypothesis
+:::
+
+## Setting the stage
+
+$H_0$ is either true or false.
+
+We assume $H_0$ is true when we start the testing process, but will conclude that $H_1$ is true if the data strongly support it enough.
+
+There are many types of errors we can make when performing hypothesis testing.
+
+## Testing error types table
+
+
+# 4.3.1
+
+::: {style="font-size: 200%;"}
+Level of Significance: $\alpha$
+:::
+
+## Definition 4.3.1
+
+For a _simple_ null hypothesis, the **level** of a test, $\alpha$, is the probability
+of making a Type I error.
+
+$$\alpha = P(\text{Type I error}) = P(\text{Reject }H_0\text{ when it's true}).$$
+
+## Example
+
+Let $X_1, X_2, \ldots, X_{10} \stackrel{i.i.d.}{\sim} N(\mu, 1)$.
+
+- Test $H_0: \mu = 3$ versus $H_1: \mu  > 3$.
+- Reject $H_0$ when $\bar{X} > 4$ (for illustration purposes). 
+
+What is the level of the test?
+
+## Example (cont)
+
+## Example (cont)
+
+# 4.4
+
+::: {style="font-size: 200%;"}
+Finding a Test: A Simple Null Hypothesis
+:::
+
+## A simple testing example
+
+Let $X_1, X_2, \ldots, X_{10} \stackrel{i.i.d.}{\sim} N(\mu, 1)$.
+
+Construct a test of $H_0: \mu = 3$ versus $H_1: \mu > 3$ based on the sample mean, $\bar{X}$, such that the level of the
+test is $\alpha = 0.05$.
+
+Some thoughts:
+
+- If $H_1$ is true, then large $\bar{X}$ (more than 3) support $H_1$.
+- The *form* of our rejection rule is, "Reject $H_0$, in favor of $H_1$, if $\bar{X} > c$".
+
+## Simple example (cont)
+
+## Simple example (cont)
+
+## Some definitions
+
+The **rejection rule** is the rule we used to decide whether we reject $H_0$.
+
+The **rejection region** (or set) is the set of values that will cause us to reject $H_0$.
+
+The rejection rule and rejection region will generally change depending on the level of the test.
+
+## Note
+
+The form of the rejection rule is determined by the alternative hypothesis, but the direction of the alternative hypothesis may not translate to the same direction in the decision rule.
+
+E.g., let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Exponential}(\lambda)$.
+
+We test $H_0: \lambda = 3$ versus $H_1: \lambda > 3$ using $\bar{X}$. 
+
+What should our rejection rule look like?
+
+## Note (cont)
+
+$\bar{X}$ is an estimator of the mean of the distribution.
+
+The mean of the distribution is $1/\lambda$
+
+Thus, a larger value of $\lambda$ is linked to smaller values of $\bar{X}$.
+
+The form of the rejection rule for this setting is, "Reject $H_0$, in favor of $H_1$, if $\bar{X} < c$, where $c$ is chosen to give a level $\alpha$ test.
+
+# 4.5
+
+::: {style="font-size: 200%;"}
+Finding a Test: A Composite Null Hypothesis
+:::
+
+## Motivating example
+
+Let $X_1, X_2, \ldots, X_{10} \stackrel{i.i.d.}{\sim} N(\mu, 1)$.
+
+Construct a test of $H_0: \mu \leq 3$ versus $H_1: \mu > 3$ based on the sample mean, $\bar{X}$, such that the level of the
+test is $\alpha = 0.05$.
+
+## Some intuition
+
+The form of the rejection rule is the same.
+
+$H_1$ being true means that the sample mean should be large.
+
+We will reject $H_0$, in favor of $H_1$, when $\bar{X} > c$, where $c$
+is chosen to control the Type I error.
+
+## Deriving the rejection rule
+
+## Notation
+
+We denote the parameter space of a generic parameter $\theta$ by $\Theta$.
+
+$\theta$ must be an element of $\Theta$, i.e., $\theta \in \Theta$. 
+
+Let $\Theta_0$ be some subset of $\Theta$.
+
+We want to test
+$$
+H_0: \theta \in \Theta_0\quad\text{versus}\quad H_1: \theta \in \Theta \setminus \Theta_0.
+$$
+
+## More details
+
+Recall that the backslash here is "setminus" notation. 
+
+$\Theta \setminus \Theta_0$ is everything left in $\Theta$ after 
+removing all the elements of $\Theta_0$.
+
+Alternatively, this set could be written as
+$$
+\Theta \setminus \Theta_0 = \Theta \cap \Theta_0^c.
+$$
+
+- Let $\Theta = \mathbb{R^+}=(0,\infty)$ and $\theta_0 = (1,\theta)$.
+- Determine $\Theta_0^c$ and $\Theta\setminus \Theta_0$.
+
+## Definition 4.5.1 (Size of a test)
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from a distribution that depends on a parameter $\theta \in \Theta$.
+
+Let $\Theta_0 \subset \Theta$.
+
+The **size** of the test of
+$$
+H_0: \theta \in \Theta_0\quad\text{versus}\quad H_1: \Theta\setminus\Theta_0
+$$
+is denoted by $\alpha$, where $\alpha$ is the maximum probability of making a type I error under the null hypothesis, i.e.,
+$$
+\alpha = \max_{\theta \in \Theta_0} P(\text{Reject }H_0\text{ when the parameter is }\theta).
+$$
+
+- Technically, we should use $\sup$ in case the maximum only occurs as a limit.
+
+Many authors (including ours) don't make this distinction, but the well-known *Statistical Inference, 2nd edition* text by Casella and Berger does.
+
+## Size versus level of a test
+
+A test is of level $\alpha$ if 
+
+$$
+\max_{\theta \in \Theta_0} P(\text{Reject }H_0\text{ when the parameter is }\theta) \leq \alpha.
+$$
+
+A test is of size $\alpha$ if
+
+$$
+\max_{\theta \in \Theta_0} P(\text{Reject }H_0\text{ when the parameter is }\theta)=\alpha.
+$$
+
+The set of level $\alpha$ tests contains the set of size $\alpha$ tests.
+
+## Size discussion
+
+The maximum probability of a type I error is taken over all values of the parameter possibilities possible under $H_0$.
+
+If $H_0: \mu \leq 3$, like our previous example, then
+
+$\alpha=$
+
+## Size discussion (cont)
+
+If we say $P(\text{Reject }H_0; \mu)$, i.e., the probability that we reject $H_0$ when the parameter is $\mu$, does not indicate that any error has been made.
+
+However, if we say $\max_{\theta \in \Theta_0} P(\text{Reject }H_0; \mu)$, then we are considering the probability of a type I error since we are assuming parameter values of $\theta$ only for values of $\theta$ consistent with $H_0$.
+
+By setting $\alpha$ using the maximum, we are controlling the highest probability of making a type I error.
+
+## Example 4.5.1
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}N(\mu, 1)$.
+
+We want to find a test of size $\alpha = 0.05$ when testing
+$$
+H_0: \mu \leq 3\quad\text{versus}\quad H_1: \mu > 3
+$$
+based on the sample mean.
+
+
+## Example 4.5.1 (cont)
+
+## Example 4.5.1 (cont)
+
+## Example 4.5.2
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim}N(\mu, \sigma^2)$, where $\sigma^2$ is known.
+
+We will test the hyptheses
+$$
+H_0: \mu \geq \mu_0\quad\text{versus}\quad H_1: \mu < \mu_0,
+$$
+for a fixed value of $\mu_0 \in \mathbb{R}$.
+
+Find a test of size $\alpha$.
+
+## Example 4.5.2 (cont)
+
+## Example 4.5.2 (cont)
+
+## Example 4.5.2 (cont)
+
+## Example 4.5.2 (cont)
+
+# 4.5.1
+
+::: {style="font-size: 200%;"}
+Where There's an $\alpha$, There's a $\beta$.
+:::
+
+## Definition 4.5.2
+
+For a simple alternative hypothesis, $\beta$ denotes the probability of a type II error, i.e.,
+$$
+\beta = P(\text{Type II error}) = P(\text{Fail to reject }H_0\text{ when it's false}).
+$$
+
+## Definition 4.5.3
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from a distribution that depends on a parameter $\theta$ that lives in a parameter space $\Theta$.
+
+Let $\Theta_0 \subset \Theta$.
+
+Consider testing 
+$$
+H_0: \theta \in \Theta_0\quad\text{versus}\quad H_1: \theta \in \Theta\setminus\Theta_0.
+$$
+
+$\beta$ is the maximum probability of making a Type II error, i.e.,
+$$
+\beta = \max_{\theta\in \Theta\setminus\Theta_0} P(\text{Fail to reject }H_0\text{ when the parameter is }\theta).
+$$
+
+## An equivalent definition
+
+## Definition 4.5.4
+
+The **power** of a test $1-\beta$,
+where
+$$
+1 - \beta = \min_{\theta \in H_1} P(\text{Reject }H_0; \theta).
+$$
+
+
+## Making a connection
+
+The rejection region of a test is defined by:
+
+- The test statistic used.
+- The form of the alternative hypothesis.
+- The size or level of the test.
+
+Once these three testing characteristics are chosen, the probability of a Type II error is "locked in" to a specific number.
+
+## Example 4.5.3
+
+Let $X_1, X_2, \ldots, X_{10} \stackrel{i.i.d.}{\sim} N(\mu, 1)$.
+
+We wish to test 
+$$
+H_0: \mu = 3\quad\text{versus}\quad H_1: \mu > 3,
+$$
+based on the sample mean, $\bar{X}$.
+
+We previously determined that the resulting rejection rule is "Reject $H_0$ if $\bar{X} > 3.52$".
+
+Determine $\beta$.
+
+## Example 4.5.3 (cont)
+
+## Example 4.5.3 (cont)
+
+## Additional points of connection
+
+- We cannot make a Type I and Type II error at the same time.
+- $\alpha$ and $\beta$ are linked together.
+    - Fixing a small $\alpha$ will increase $\beta$.
+- Is there a way to control both $\alpha$ and $\beta$?
+
+# 4.6
+
+::: {style="font-size: 200%;"}
+Non-Normal Distribution Hypothesis Tests
+:::
+
+# 4.7
+
+::: {style="font-size: 200%;"}
+Power Functions
+:::

@@ -631,7 +631,7 @@ i.e., if $\lim_{n\to\infty} M_n(t) = M(t)$ then $X_n \stackrel{d}{\to} X$.
 
 Let $X_1,X_2,\ldots$ be a sequence of independent random variables with
 $$
-X_n \sim \text{Binomial}(n, \lambda/p).
+X_n \sim \text{Binomial}(n, \lambda/n).
 $$
 To what does $X_n$ converge in distribution?
 
@@ -859,5 +859,5 @@ $$
 ## Facts about the sample variance
 
 - $E(S^2) = \sigma^2$.
-- $\text{var}(S^2) = \frac{1}{n}E[(X-\mu)^2]-\frac{(\sigma^2)^2(n-3)}{n(n-1)}$.
+- $\text{var}(S^2) = \frac{1}{n}E[(X-\mu)^4]-\frac{(\sigma^2)^2(n-3)}{n(n-1)}$.
 - If $E[(X-\mu)^4]<\infty$, then $S^2 \stackrel{P}{\to} \sigma^2$. 
