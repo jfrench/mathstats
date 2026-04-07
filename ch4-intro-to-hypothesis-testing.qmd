@@ -213,7 +213,7 @@ $$
 \Theta \setminus \Theta_0 = \Theta \cap \Theta_0^c.
 $$
 
-- Let $\Theta = \mathbb{R^+}=(0,\infty)$ and $\theta_0 = (1,\theta)$.
+- Let $\Theta = \mathbb{R^+}=(0,\infty)$ and $\Theta_0 = (1,\infty)$.
 - Determine $\Theta_0^c$ and $\Theta\setminus \Theta_0$.
 
 ## Definition 4.5.1 (Size of a test)
@@ -269,7 +269,7 @@ By setting $\alpha$ using the maximum, we are controlling the highest probabilit
 
 ## Example 4.5.1
 
-Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}N(\mu, 1)$.
+Let $X_1, X_2, \ldots, X_{10}\stackrel{i.i.d.}{\sim}N(\mu, 1)$.
 
 We want to find a test of size $\alpha = 0.05$ when testing
 $$
@@ -383,8 +383,141 @@ Determine $\beta$.
 Non-Normal Distribution Hypothesis Tests
 :::
 
+## Example 4.6.1
+
+Suppose that $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Exponential}(\lambda).
+
+Derive a test of size $\alpha$ for the hypotheses
+$$
+H_0: \lambda \leq \lambda_0\quad\text{versus}\quad H_1: \lambda > \lambda_0,
+$$
+for some fixed $\lambda_0 > 0$.
+
+Base your test on $X_{(1)}$, the minimum value of the sample.
+
+## Example 4.6.1 (cont)
+
+## Example 4.6.1 (cont)
+
+## Example 4.6.1 (cont)
+
+## Example 4.6.1 (cont)
+
+## Example 4.6.2
+
+Suppose that $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Exponential}(\lambda)$.
+
+Derive a test of size $\alpha$ for the hypotheses
+$$
+H_0: \lambda \leq \lambda_0\quad\text{versus}\quad H_1: \lambda > \lambda_0,
+$$
+for some fixed $\lambda_0 > 0$.
+
+Base your test on $\bar{X}$, the sample mean. Leave your test in terms of a $\chi^2$-critical value.
+
+## Example 4.6.2 (cont)
+
+## Example 4.6.2 (cont)
+
+## Example 4.6.2 (cont)
+
+## Example 4.6.2 (cont)
+
 # 4.7
 
 ::: {style="font-size: 200%;"}
 Power Functions
 :::
+
+## Power functions
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} F_{\theta}$. 
+
+We wish to test
+$$
+H_0: \theta \in \Theta_0\quad\text{versus}\quad H_1: \theta \in \Theta \setminus \Theta_0.
+$$
+
+A **power function** is useful for comparing two different size $\alpha$ tests.
+
+## Definition 4.7.1
+
+The **power function** for a hypothesis test concerning $\theta$ is
+$$
+\gamma(\theta) := P(\text{Reject }H_0; \theta),
+$$
+for all $\theta \in \Theta$.
+
+## Power vs power function
+
+The power of a test and the power function are not the same thing, but they are related.
+
+## Power vs power function (cont)
+
+## Power vs power function (cont)
+
+## Example 4.7.1
+
+In Example 4.5.2, we assumed $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} N(\mu, \sigma^2)$ and derived a test of $H_0: \mu \geq \mu_0$ versus $H_1: \mu < \mu_0$.
+
+Our rejection rule was "Reject $H_0$ if $\bar{X} < \mu_0 + z_{1-\alpha}\frac{\sigma}{\sqrt{n}}$."
+
+Determine the power function of the test.
+
+## Example 4.7.1 (cont)
+
+## Example 4.7.1 (cont)
+
+## Example 4.7.1 (cont)
+
+## Example 4.7.1 (cont)
+
+## Example 4.7.1 (cont)
+
+```{r}
+#| echo: false
+power <- function(mu) {
+  pnorm(2*sqrt(10)-1.28-sqrt(10)*mu)
+}
+mu <- seq(-1, 6, length = 101)
+plot(mu, power(mu), type = "l")
+abline(h = 0.10)
+points(2, 0.1, pch = 20)
+```
+
+## Example 4.7.2
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}\text{Exponential}(\lambda)$.
+
+In Section 4.6, we developed two different hypothesis tests of size $\alpha$ for
+$$
+H_0: \lambda \leq \lambda_0\quad\text{versus}\quad H_1: \lambda > \lambda_0.
+$$
+
+The decision rule of Test 1 is "Reject $H_0$ if $X_{(1)} < -\frac{1}{n\lambda_0}\ln(1-\alpha)$".
+
+The decision rule of Test 2 is "Reject $H_0$ if $\bar{X} < \frac{\chi^2_{1-\alpha,2n}}{2n\lambda_0}$".
+
+## Example 4.7.2 (cont)
+
+## Example 4.7.2 (cont)
+
+## Example 4.7.2 (cont)
+
+## Example 4.7.2 (cont)
+
+## Example 4.7.2 (cont)
+
+```{r}
+#| echo: false
+power1 <- function(lambda) {
+  1-(0.95)^(lambda/1)
+}
+power2 <- function(lambda) {
+  pchisq(lambda/1 * qchisq(0.95, df = 20),df = 20)
+}
+lambda <- seq(0.1, 6, length = 101)
+plot(lambda, power1(lambda), type = "l", ylab = "power", col = "blue", ylim = c(0, 1))
+lines(lambda, power2(lambda), col = "orange")
+legend("bottomright", legend = c("Test 1", "Test 2"), lwd = c(1, 1), col = c('blue', 'orange'))
+```
