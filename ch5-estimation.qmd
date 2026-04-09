@@ -1,0 +1,135 @@
+---
+format: revealjs
+self-contained: true
+---
+
+# Chapter 5
+
+::: {style="font-size: 200%;"}
+Estimation
+:::
+
+## Introduction
+
+In this chapter, we will learn methods for estimating parameters instead of guessing.
+
+- Method of Moments estimation
+- Maximum Likelihood estimation
+
+# 5.1
+
+::: {style="font-size: 200%;"}
+Method of Moments Estimators (MMEs)
+:::
+
+# 5.1.1
+
+::: {style="font-size: 200%;"}
+The idea
+:::
+
+## Background
+
+Method of moments estimators are constructed by:
+
+- Equating the moments of a population's distribution with the sample moments.
+- Solving for the unknown parameters.
+- Use as many moments as you need in order to solve for all parameters.
+
+Typically, we start with the lower moments first.
+
+- i.e., $k = 1$ first, then $k=2$ if necessary, then $k=3$ if still necessary, etc.
+
+## Definition 5.1.1
+
+The **$k$th population (distribution) moment** of $X$, for $k=1,2,\ldots$, is denoted by $\mu_k$, and defined as
+$$
+\mu_k := E[X^k].
+$$
+
+Note that $\mu_1 = E[X^1] = \mu$.
+
+
+## Definition 5.1.2
+
+The **$k$th sample moment** of $X$, for $k=1,2,\ldots$, is denoted by $M_k$, and defined as
+$$
+M_k := \frac{1}{n}\sum_{i=1}^n X_i^k.
+$$
+
+Note that $M_1 = \bar{X}$.
+
+# 5.1.2
+
+::: {style="font-size: 200%;"}
+Examples
+:::
+
+## Example 5.1.1
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Exponential}(\lambda)$. 
+
+Find an MME of $\lambda$.
+
+## Example 5.1.1 (cont)
+
+## Example 5.1.2
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Gamma}(\alpha, \beta)$. 
+
+Find MMEs of $\alpha$ and $\beta$.
+
+## Example 5.1.2 (cont)
+
+## Example 5.1.2 (cont)
+
+## Example 5.1.2 (cont)
+
+# 5.1.3
+
+::: {style="font-size: 200%;"}
+Properties of MMEs
+:::
+
+## Pros of MMEs
+
+ - Intuitive
+ - Easy to find, overall.
+ - Usually consistent.
+ - Usually asymptotically normal.
+ 
+## Cons of MMEs
+
+- Often biased.
+- Not uniquely defined.
+- May be outside of the parameter space.
+- May not exist.
+
+## Example 5.1.1 continued
+
+In Example 5.1.1, we derived the MME $\hat{\lambda} = \bar{X}$ for an $\text{Exponential}{\lambda}$ population.
+
+What can we say about the convergence of the estimator?
+
+## Example 5.1.1 (cont)
+
+## Example 5.1.1 (cont)
+
+## Example 5.1.2 continued
+
+In Example 5.1.2, we derived the MME estimator
+$$
+\hat{\alpha} = \frac{\bar{X}^2}{\frac{1}{n}\sum_{i=1}^n X_i^2 - \bar{X}^2} = \frac{M_1^2}{M_2 - M_1^2}.
+$$
+
+## Example 5.1.2 (cont)
+
+## Example 5.1.2 (cont)
+
+## Some thoughts
+
+- The WLLN gives us that $M_k \stackrel{P}{\to} \mu_k$ as long as $\text{var}(X^k)$ is finite.
+- Asymptotic normality using the CLT and combining the WLLN with the Delta Method.
+- MMEs are not well-defined. We could use the second moments to derive an estimator instead of the first.
+- MMEs may take values that fall outside the parameter space.
+- MMEs may not exist if moments don't exist (i.e., aren't finite).

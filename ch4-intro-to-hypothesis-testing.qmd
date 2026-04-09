@@ -362,7 +362,7 @@ H_0: \mu = 3\quad\text{versus}\quad H_1: \mu > 3,
 $$
 based on the sample mean, $\bar{X}$.
 
-We previously determined that the resulting rejection rule is "Reject $H_0$ if $\bar{X} > 3.52$".
+When $\alpha = 0.05$, we previously determined that the resulting rejection rule is "Reject $H_0$ if $\bar{X} > 3.52$".
 
 Determine $\beta$.
 
@@ -385,7 +385,7 @@ Non-Normal Distribution Hypothesis Tests
 
 ## Example 4.6.1
 
-Suppose that $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Exponential}(\lambda).
+Suppose that $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Exponential}(\lambda)$.
 
 Derive a test of size $\alpha$ for the hypotheses
 $$
@@ -514,10 +514,11 @@ power1 <- function(lambda) {
   1-(0.95)^(lambda/1)
 }
 power2 <- function(lambda) {
-  pchisq(lambda/1 * qchisq(0.95, df = 20),df = 20)
+  pchisq(lambda/1 * qchisq(0.05, df = 20),df = 20)
 }
 lambda <- seq(0.1, 6, length = 101)
 plot(lambda, power1(lambda), type = "l", ylab = "power", col = "blue", ylim = c(0, 1))
 lines(lambda, power2(lambda), col = "orange")
 legend("bottomright", legend = c("Test 1", "Test 2"), lwd = c(1, 1), col = c('blue', 'orange'))
+points(1, 0.05, pch = 20)
 ```
