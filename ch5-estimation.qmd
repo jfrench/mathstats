@@ -133,3 +133,132 @@ $$
 - MMEs are not well-defined. We could use the second moments to derive an estimator instead of the first.
 - MMEs may take values that fall outside the parameter space.
 - MMEs may not exist if moments don't exist (i.e., aren't finite).
+
+# 5.2
+
+::: {style="font-size: 200%;"}
+Maximum Likelihood Estimators
+:::
+
+## Idea
+
+A maximum likelihood estimator (MLE) estimates an unknown parameter with the value whose associated model is most likely to have produced the observed data.
+
+## The joint density
+
+In general, for fixed $\stackrel{\rightarrow}{x} = (x_1, x_2, \ldots, x_n)$, the joint density is defined as
+$$
+f(\stackrel{\rightarrow}{x}; \theta) = f(x_1, x_2, \ldots, x_n; \theta).
+$$
+
+Note that $\theta$ is assumed fixed in the density function since its value is conditional on $\theta$.
+
+## Joint density versus likelihood function
+
+Mathematically, the joint density and the likelihood function are identical.
+
+Conceptually, the likelihood function differs from the joint density in that $\theta$ is assumed to be unknown and the data, $\stackrel{\rightarrow}{x} = (x_1, x_2, \ldots, x_n)$ are fixed.
+
+## The likelihood function
+
+The likelihood function is denoted
+$$
+L(\theta) = L(\theta; \stackrel{\rightarrow}{x}) = f(\stackrel{\rightarrow}{x}; \theta).
+$$
+
+Note that $\theta$ is assumed fixed in the density function since its value is conditional on $\theta$.
+
+## Definition 5.2.1
+
+Suppose that $X_1, X_2, \ldots, X_jn$ have joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$.
+
+A **likelihood function** is denoted by $L(\theta)$ is defined as any function proportional to $f(\stackrel{\rightarrow}{x}; \theta)$ when thought of as a function of $\theta$.
+
+The **maximum likelihood estimator** of $\theta$ is the value of $\theta$ that maximizes $L(\theta)$.
+
+# 5.2.1
+
+::: {style="font-size: 200%;"}
+Examples
+:::
+
+## Example 5.2.2
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Bernoulli}(p)$. Determine the MLE of $p$.
+
+## Example 5.2.2 (cont)
+
+## Example 5.2.2 (cont)
+
+## Notation
+
+Given a likelihood function $L(\theta)$, we denote the log-likelihood function by
+$$
+\ell(\theta) = \ln L(\theta).
+$$
+
+The maximum likelihood estimator for $\theta$ that maximizes $L(\theta)$, and equivalently, $\ell(\theta)$, since $\ln$ is an order-preserving transformation.
+
+## Example 5.2.3
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample with pdf
+$$
+f(\stackrel{\rightarrow}{x}; \theta) = \theta x^{\theta - 1} I_{(0,\infty)(x)},\quad\text{for }\theta > 0.
+$$
+Determine the MLE of $\theta$.
+
+## Example 5.2.3 (cont)
+
+## Example 5.2.3 (cont)
+
+## Example 5.2.4
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim}N(\mu, \sigma^2)$. Determine the MLEs for $\mu$ and $\sigma^2$.
+
+## Example 5.2.4 (cont)
+
+## Example 5.2.4 (cont)
+
+## Example 5.2.4 (cont)
+
+## Example 5.2.4 (cont)
+
+## Example 5.2.5 (Parameters in the Support of the Distribution)
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from the distribution with pdf
+$$
+f(\stackrel{\rightarrow}{x}; \theta, \lambda) = \theta \lambda^{\theta}x^{-(\theta+1)}I_{(\lambda, \infty)}(x),
+$$
+with $\theta>0, \lambda > 0$. Find the MLEs for $\theta$ and $\lambda$.
+
+## Example 5.2.5 (cont)
+
+## Example 5.2.5 (cont)
+
+## Example 5.2.5 (cont)
+
+## Example 5.2.5 (cont)
+
+## Example 5.2.5 (cont)
+
+# 5.2.2 
+
+::: {style="font-size: 200%;"}
+The Invariance Property of MLEs
+:::
+
+## Definition 5.2.2
+
+If $\theta$ is the MLE of $\theta$, then the MLE of a function $\tau(\theta)$ is
+$$
+\widehat{\tau(\theta)} = \tau(\hat{\theta}).
+$$
+This is known as the **invariance property** of MLEs.
+
+## Invariance examples
+
+## Invariance examples (cont)
+
+## Psuedo proof of invariance
+
+## Psuedo proof of invariance (cont)
