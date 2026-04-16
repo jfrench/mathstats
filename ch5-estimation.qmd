@@ -170,7 +170,7 @@ Note that $\theta$ is assumed fixed in the density function since its value is c
 
 ## Definition 5.2.1
 
-Suppose that $X_1, X_2, \ldots, X_jn$ have joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$.
+Suppose that $X_1, X_2, \ldots, X_n$ have joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$.
 
 A **likelihood function** is denoted by $L(\theta)$ is defined as any function proportional to $f(\stackrel{\rightarrow}{x}; \theta)$ when thought of as a function of $\theta$.
 
@@ -203,7 +203,7 @@ The maximum likelihood estimator for $\theta$ that maximizes $L(\theta)$, and eq
 
 Let $X_1, X_2, \ldots, X_n$ be a random sample with pdf
 $$
-f(\stackrel{\rightarrow}{x}; \theta) = \theta x^{\theta - 1} I_{(0,\infty)(x)},\quad\text{for }\theta > 0.
+f(x; \theta) = \theta x^{\theta - 1} I_{(0,\infty)(x)},\quad\text{for }\theta > 0.
 $$
 Determine the MLE of $\theta$.
 
@@ -262,3 +262,118 @@ This is known as the **invariance property** of MLEs.
 ## Psuedo proof of invariance
 
 ## Psuedo proof of invariance (cont)
+
+# 5.3
+
+::: {style="font-size: 200%;"}
+The Cram&eacute;r–Rao Lower Bound (CRLB)
+:::
+
+## CRLB Introduction
+
+The CRLB is the minimum possible variance of an unbiased estimator of a parameter $\theta$ (or a function, $\tau(\theta)$).
+
+If $\hat{\theta}$ is an unbiased estimator of $\theta$, then the CRLB tells us how small the variance of $\hat{\theta}$ can be.
+
+- This lower bound may not be attainable.
+- If an unbiased estimator does attain the associated CRLB, then it has the uniformly minimum variance amoung all unbiased estimators.
+
+# 5.3.1
+
+::: {style="font-size: 200%;"}
+Statement of the CRLB and Derivation
+:::
+
+## The Cram&eacute;r–Rao Lower Bound
+
+Let $X_1, X_2, \ldots, X_n$ be random variable with joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$. Assume that the support of the distribution does not depend on $\theta$ and that $\theta$ is one-dimensional.
+
+Consider estimating some function $\tau(\theta)$ and let $T=t(\stackrel{\rightarrow}{X})$ be any unbiased estimator of $\tau(\theta)$.
+
+Then 
+$$
+\text{var}[T] \geq \frac{[\tau^{'}(\theta)^2]}{E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)\right]},
+$$
+under certain regularity assumptions.
+
+## Regularity assumptions for the CRLB
+
+The regularity assumption for the CRLB are:
+
+- $0 < E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)\right] < \infty$,
+- $\frac{\partial}{\partial\theta}\int f(\stackrel{\rightarrow}{x}; \theta) d\stackrel{\rightarrow}{x}=\int \frac{\partial}{\partial\theta} f(\stackrel{\rightarrow}{x}; \theta) d\stackrel{\rightarrow}{x}$
+- $\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{x}; \theta)$ exists.
+
+## CRLB notation
+
+We denote the CRLB by
+$$
+\text{CRLB}_{\tau(\theta)}:=\frac{[\tau^{'}(\theta)^2]}{E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)^2\right]}.
+$$
+
+Computation of the CRLB will simplify when the data are i.i.d., but the CRLB holds for more general joint pdfs.
+
+
+## Definition 5.3.1
+
+The Fisher information for a sample is defined as
+$$
+I_n(\theta) = E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)^2\right].
+$$
+
+The Fisher information quantifies the amount of information the sample contains about $\theta$.
+
+We can rewrite the CRLB of $\theta$ as
+$$
+\text{CRLB}_{\tau(\theta)} = \frac{[\tau^{'}(\theta)]^2}{I_n(\theta)}.
+$$
+
+## The Cauchy-Schwarz Inequality
+
+For square-integrable functions $f$ and $g$,
+$$
+\left( \int f(x) g(x)\,dx \right)^2
+\leq
+\left( \int f(x)^2\,dx \right)
+\left( \int g(x)^2\,dx \right)
+$$
+There are analagous Cauchy-Schwarz inequalities for sums and inner products.
+
+## Proof of C-S inequality
+
+## Proof of C-S inequality (cont)
+
+## Proof of C-S inequality (cont)
+
+## Proof of CRLB
+
+## Proof of CRLB (cont)
+
+## Proof of Equation 5.3.4
+
+## Proof of Equation 5.3.4 (cont)
+
+## Proof of Equation 5.3.4 (cont)
+
+## Proof of Equation 5.3.4 (cont)
+
+## Example 5.3.1
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} \text{Bernoulli}(p)$.
+
+a. Find the CRLB for the variance of all unbiased estimators of $p$.
+b. Find the CRLB for the variance of all unbiased estimators of $\tau(p) = p(1-p)$.
+
+## Example 5.3.1 (cont)
+
+## Example 5.3.1 (cont)
+
+## Example 5.3.1 (cont)
+
+
+
+# 5.3.2 
+
+::: {style="font-size: 200%;"}
+Computational Simplifications for the CRLB
+:::
