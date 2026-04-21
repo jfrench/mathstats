@@ -249,7 +249,7 @@ The Invariance Property of MLEs
 
 ## Definition 5.2.2
 
-If $\theta$ is the MLE of $\theta$, then the MLE of a function $\tau(\theta)$ is
+If $\hat{\theta}$ is the MLE of $\theta$, then the MLE of a function $\tau(\theta)$ is
 $$
 \widehat{\tau(\theta)} = \tau(\hat{\theta}).
 $$
@@ -377,3 +377,59 @@ b. Find the CRLB for the variance of all unbiased estimators of $\tau(p) = p(1-p
 ::: {style="font-size: 200%;"}
 Computational Simplifications for the CRLB
 :::
+
+## Definition 5.3.2
+
+In statistical inference, the **score function** is the derivative of the log-likelihood 
+$$
+S(\stackrel{\rightarrow}{X}) = \frac{\partial}{\partial\theta}\ln f(\stackrel{\rightarrow}{X}; \theta).
+$$
+
+## Simplification 0.
+
+The expected value of the score function is zero. That is, 
+$$
+E\left[\frac{\partial}{\partial\theta}\ln f(\stackrel{\rightarrow}{X}; \theta)\right] = 0.
+$$
+
+## Simplification 0 (cont)
+
+## Simplification 1
+
+The Fisher information can be written in terms of a second deriviative. In particular, we have that
+$$
+E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)^2\right] = -E\left[\frac{\partial^2}{\partial\theta^2}\ln f(\stackrel{\rightarrow}{X}; \theta)\right].
+$$
+
+## Simplification 1 (cont)
+
+## Simplification 1 (cont)
+
+## Simplification 1 (cont)
+
+## Simplification 2
+
+If $X_1, X_2, \ldots, X_n$ are i.i.d., then the "$n$-dimensional Fisher information" can be written as $n$ times the "one-dimensional Fisher information". That is,
+$$
+E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)^2\right] \stackrel{iid}{=} nE\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X_1}; \theta)\right)^2\right],
+$$
+or
+$$
+I_n(\theta) \stackrel{iid}{=}nI_1(\theta).
+$$
+
+## Simplification 2 (cont)
+
+## Simplification 2 (cont)
+
+## Example 5.3.2
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim}\text{Gamma}(2,\beta)$.
+
+Find the CRLB for the variance of all unbiased parameters of $\beta$.
+
+## Example 5.3.2 (cont)
+
+## Example 5.3.2 (cont)
+
+## Example 5.3.2 (cont)
