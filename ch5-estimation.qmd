@@ -411,7 +411,7 @@ $$
 
 If $X_1, X_2, \ldots, X_n$ are i.i.d., then the "$n$-dimensional Fisher information" can be written as $n$ times the "one-dimensional Fisher information". That is,
 $$
-E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)^2\right] \stackrel{iid}{=} nE\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X_1}; \theta)\right)^2\right],
+E\left[\left(\frac{\partial}{\partial\theta} \ln f(\stackrel{\rightarrow}{X}; \theta)\right)^2\right] \stackrel{iid}{=} nE\left[\left(\frac{\partial}{\partial\theta} \ln f(X_1; \theta)\right)^2\right],
 $$
 or
 $$
@@ -574,3 +574,57 @@ Let $X$ and $Y$ be random variables.
 - $E[X \mid Y]$ is a random variable.
 - $E[E[X \mid Y]] = E[X]$ (the law of iterated expectation).
 - $\text{var}[X] = \text{var}[E[X\mid Y]] + E[\text{var}[X \mid Y]]$.
+
+# 5.5.3 
+
+::: {style="font-size: 250%;"}
+The Rao-Blackwell Theorem
+:::
+
+## The Rao-Blackwell Theorem
+
+Suppose we want to estimate some function of $\theta$ that we have named $\tau(\theta)$ based on some random sample $\stackrel{\rightarrow}{X}$.
+
+Suppose that we have some unbiased estimator $T = t(\stackrel{\rightarrow}{X})$ so that
+\begin{align}
+E[T] = \tau(\theta).
+\end{align}
+
+Suppose that we have some sufficient statistic $S$ for the distribution.
+
+Then
+\begin{align}
+T^* = E[T \mid S]
+\end{align}
+
+is also unbiased for $\tau(\theta)$ and $\text{var}(T^*) \leq \text{var}(T)$.
+
+Furthermore, $T^*$ is a function of $S$ and the variance is strictly lower than the variance of $T$ unless $T^*$ and $T$ are the same.
+
+## Proof of the Rao-Blackwell Theorem
+
+## Proof of the Rao-Blackwell Theorem
+
+## Proof of the Rao-Blackwell Theorem
+
+## Proof of the Rao-Blackwell Theorem
+
+## Example 5.5.4
+
+Suppose that $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}\text{Poisson}(\lambda)$.
+
+Find a quality unbiased estimator of $\tau(\lambda) = e^{-\lambda}$.
+
+## Example 5.5.4 (cont)
+
+## Example 5.5.4 (cont)
+
+## Example 5.5.4 (cont)
+
+## Example 5.5.4 (cont)
+
+## Example 5.5.4 (cont)
+
+## Example 5.5.4 (cont)
+
+
