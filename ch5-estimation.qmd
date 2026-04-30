@@ -448,11 +448,11 @@ MLEs have good large-sample properties.
 
 ## Definition 5.4.1
 
-An unbiased estimator who variance attains the CRLB is said to be **efficient**.
+An unbiased estimator whose variance attains the CRLB is said to be **efficient**.
 
 The efficiency of an estimator $T$ of $\tau(\theta)$ is the ratio
 $$
-\frac{\text{CRLB}_\theta}{\text{var}(T)}.
+\frac{\text{CRLB}_{\tau(\theta)}}{\text{var}(T)}.
 $$
 An efficient estimator has efficiency 1.
 
@@ -590,6 +590,8 @@ Suppose that we have some unbiased estimator $T = t(\stackrel{\rightarrow}{X})$ 
 E[T] = \tau(\theta).
 \end{align}
 
+## The Rao-Blackwell Theorem (cont)
+
 Suppose that we have some sufficient statistic $S$ for the distribution.
 
 Then
@@ -627,4 +629,137 @@ Find a quality unbiased estimator of $\tau(\lambda) = e^{-\lambda}$.
 
 ## Example 5.5.4 (cont)
 
+# 5.5.4
+
+::: {style="font-size: 250%;"}
+Complete Statistics
+:::
+
+## Definition 5.5.3 (Complete Statistic)
+
+Suppose that $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}f(x;\theta)$. 
+
+A statistic $S = s(\bar{X})$ is **complete** for the distribution if, for any function $g$ such that $E[g(S)] = 0$ for all $\theta$ in the parameter space, we find that $g(S)$ must be $0$ with probability $1$.
+
+## Comments on Completeness
+
+Completeness is usful for showing that estimators are unique in some way.
+
+Directly showing that a statistic is complete for a distribution is often complex, so it is rarely done that way.
+
+Examples 5.5.5 and 5.5.6 demonstrate cases where the completeness of a statistic can be shown for certain distributions.
+
+We will focus on using a powerful theorem related to exponential families.
+
+# 5.5.6
+
+::: {style="font-size: 250%;"}
+Exponential Families and Completeness
+:::
+
+## Definition 5.5.4 (One-parameter exponential family
+
+
+$X_1, X_2, \ldots, X_n$ is a random sample from a **one-parameter exponential family** if $\theta$ is one-dimensional and if $X_1, X_2, \ldots, X_n$ has a joint pdf that can be written as
+$$
+f(\stackrel{\rightarrow}{x}; \theta) = a(\theta)b(\stackrel{\rightarrow}{x}) \exp\big(c(\theta)d(\stackrel{\rightarrow}{x})\big),
+$$
+for some functions $a(\theta)$, $b(\stackrel{\rightarrow}{x})$, $c(\theta)$, and $d(\stackrel{\rightarrow}{x})$.
+
+- $a$ and $c$ depend only on $\theta$ and not on $\stackrel{\rightarrow}{x}$.
+- $b$ and $d$ depend only on $\stackrel{\rightarrow}{x}$ and not on $\theta$.
+
+
+## Theorem 5.5.1 (Completeness and the exponential family)
+
+If $X_1, X_2, \ldots, X_n$ is a random sample from a one-parameter exponential family distribution, then
+$$
+S = d(\stackrel{\rightarrow}{X})
+$$
+is complete and sufficient for the distribution [as long as the parameter space for $\theta$ contains an open set].
+
+## Example 5.5.10
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim}\text{Bernoulli}(p)$. Find a complete and sufficient statistic for this distribution.
+
+## Example 5.5.10 (cont)
+
+## Example 5.5.10 (cont)
+
+## Definition 5.5.5 ($k$-parameter exponential family)
+
+
+$X_1, X_2, \ldots, X_n$ is a random sample from a **$k$-parameter exponential family** if $\theta$ is $k$-dimensional and if $X_1, X_2, \ldots, X_n$ has a joint pdf that can be written as
+$$
+f(\stackrel{\rightarrow}{x}; \theta) = a(\theta)b(\stackrel{\rightarrow}{x}) \exp\left[ \sum_{i=1}^{k} c_i(\theta)d_i(\stackrel{\rightarrow}{x}) \right]
+$$
+for some functions $a(\theta)$, $b(\stackrel{\rightarrow}{x})$, $c_1(\theta), \ldots, c_k(\theta)$, and $d_1(\stackrel{\rightarrow}{x}), \ldots, d_k(\stackrel{\rightarrow}{x})$.
+
+## Theorem 5.5.2
+
+If $X_1, X_2, \ldots, X_n$ is a random sample from a $k$-parameter exponential family distribution, then
+$$
+S = \big(d_1(\stackrel{\rightarrow}{X}),\ldots,d_k(\stackrel{\rightarrow}{X})\big)
+$$
+is complete and sufficient for the distribution [as long as the parameter space for $\theta$ contains an open set].
+
+- E.g., a $N(\theta, \theta^2)$ distribution does not satisfy this condition.
+
+## Example 5.5.11
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} N(\mu, \sigma^2)$. Find the complete, sufficient statistics for this family of distributions.
+
+## Example 5.5.11 (cont)
+
+## Example 5.5.11 (cont)
+
+## Example 5.5.11 (cont)
+
+# 5.5.5
+
+::: {style="font-size: 250%;"}
+The UMVUE
+:::
+
+## Lefhmann-Scheff&eacute; Theorem
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim} f(x;\theta)$, and suppose that $S = s(\bar{X})$ is a complete and sufficient statistic for this distribution.
+
+If $g(S)$ is some function of $S$ that is unbiased for $\tau(\theta)$, then $g(S)$ is the UMVUE for $\tau(\theta)$.
+
+In short: if we can find a unbiased estimator that a function of a complete sufficient statistic, then we have found the UMVUE!
+
+## Example 5.5.7
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}\text{Poisson}(\lambda)$. Find the UMVUE for $\lambda$.
+
+## Example 5.5.7 (cont)
+
+## Example 5.5.7 (cont)
+
+## Example 5.5.8
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}\text{Poisson}(\lambda)$. Find the UMVUE for $\lambda^2$.
+
+## Example 5.5.8 (cont)
+
+## Example 5.5.8 (cont)
+
+## Example 5.5.9
+
+Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim}\text{Poisson}(\lambda)$. Find the UMVUE for $e^{-\lambda}$.
+
+## Example 5.5.9 (cont)
+
+## Example 5.5.9 (cont)
+
+## Example 5.5.11 (cont)
+
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} N(\mu, \sigma^2)$. Determine the UMVUEs for $\mu$ and $\sigma^2$.
+
+## Example 5.5.11 (cont)
+
+## Example 5.5.11 (cont)
+
+## Example 5.5.11 (cont)
 
