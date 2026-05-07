@@ -721,7 +721,7 @@ Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} N(\mu, \sigma^2)$. Find the c
 The UMVUE
 :::
 
-## Lefhmann-Scheff&eacute; Theorem
+## Lehmann-Scheff&eacute; Theorem
 
 Let $X_1, X_2, \ldots, X_n\stackrel{i.i.d.}{\sim} f(x;\theta)$, and suppose that $S = s(\bar{X})$ is a complete and sufficient statistic for this distribution.
 
@@ -798,7 +798,7 @@ Let $X_1, X_2, \ldots, X_n$ be a random sample from the $N(0,\sigma^2)$ distribu
 
 Suppose that $X_1, X_2, \ldots, X_n$ have joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$.
 
-If a statistic $T = t(\bar{X})$ has the following property:
+If a statistic $T = t(\stackrel{\rightarrow}{X})$ has the following property:
 $$
 \frac{f(\stackrel{\rightarrow}{x}; \theta)}{f(\stackrel{\rightarrow}{y}; \theta)} \text{ is } \theta\text{-free}
 \quad \Longleftrightarrow \quad
@@ -808,7 +808,7 @@ then $T$ is a minimal sufficient statistic.
 
 ## Example 5.6.2
 
-Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} N(\theta, \theta^2)$. Use Theorem 5.6.1 to determine the minimal sufficient statistics for $(\mu, \sigma^2)$.
+Let $X_1, X_2, \ldots, X_n \stackrel{i.i.d.}{\sim} N(\theta, \theta^2)$. Use Theorem 5.6.1 to determine the minimal sufficient statistics for the distribution.
 
 ## Example 5.6.2 (cont)
 
@@ -875,7 +875,7 @@ If $\theta$ is a location parameter and $T$ is a location-invariant statistic, t
 
 Suppose that $X_1, X_2, \ldots, X_n$ is a random sample from the shifted exponential distribution with rate $1$ with pdf
 $$
-f(x;\theta) = e^{-(x-\theta)} I_{(0,\infty)}(x).
+f(x;\theta) = e^{-(x-\theta)} I_{(\theta,\infty)}(x).
 $$
 Determine an ancillary statistic.
 

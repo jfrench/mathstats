@@ -1,0 +1,189 @@
+---
+format: revealjs
+self-contained: true
+---
+
+# Chapter 6
+
+::: {style="font-size: 250%;"}
+Hypothesis Testing
+:::
+
+## Definition 6.2.1 (Best Test)
+
+For testing $H_0 : \theta = \theta_0$ versus $H_1 : \theta = \theta_1$, with a random sample $X_1, X_2, \ldots, X_n$, $C_*$ is called a *best critical region of size $\alpha$* (or the corresponding test is a *best test of size $\alpha$*) if:
+
+1. $P(\stackrel{\rightarrow}{X} \in C_* ; \theta_0) = \alpha$. (This makes it “of size $\alpha$.”)
+2. If $C$ is any other set such that $P(\stackrel{\rightarrow}{X} \in C; \theta_0) = \alpha$, then
+$$
+P(\stackrel{\rightarrow}{X} \in C_*; \theta_1) \geq P(\stackrel{\rightarrow}{X} \in C; \theta_1).
+$$
+
+A best test of size $\alpha$ is often referred to as a **most powerful test of size $\alpha$.**
+
+## The Neyman--Pearson Lemma
+
+Suppose that $X_1, X_2, \ldots, X_n$ have joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$.
+
+Consider the ratio
+$$
+\lambda(\stackrel{\rightarrow}{x}; \theta_0, \theta_1)
+= \frac{f(\stackrel{\rightarrow}{x}; \theta_0)}{f(\stackrel{\rightarrow}{x}; \theta_1)}.
+$$
+
+## The Neyman--Pearson Lemma (cont)
+
+Let $C$ be the set
+$$
+C = \left\{ \stackrel{\rightarrow}{x} : \lambda(\stackrel{\rightarrow}{x}; \theta_0, \theta_1) \leq k \right\},
+$$
+where $k$ is a constant such that
+$$
+P(\stackrel{\rightarrow}{X} \in C; H_0) = \alpha.
+$$
+
+Then $C$ is a *best critical region of size $\alpha$* for testing
+$$
+H_0 : \theta = \theta_0 \quad \text{versus} \quad H_1 : \theta = \theta_1.
+$$
+
+## Example 6.2.1
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from the $\text{Exponential}(\theta)$ distribution. Find the best test of size $\alpha$ for
+$$
+H_0 : \theta = \theta_0 \quad \text{versus} \quad H_1 : \theta = \theta_1,
+$$
+where $\theta_0 < \theta_1$.
+
+## Example 6.2.1 (cont)
+
+## Example 6.2.1 (cont)
+
+## Example 6.2.1 (cont)
+
+## Example 6.2.1 (cont)
+
+## Example 6.2.1 (cont)
+
+## Definition 6.3.1 (UMP)
+
+For simple $H_0$ and composite $H_1$, the critical region $C$ is a **uniformly most powerful critical region of size $\alpha$** if $C$ is the most powerful (best) critical region for testing $H_0$ against every simple hypothesis in $H_1$.
+
+## Theorem 6.3.1 (UMPs and exponential families)
+
+Suppose that the pdf belongs to a one-parameter exponential family:
+$$
+f(\stackrel{\rightarrow}{x}; \theta) = a(\theta)b(\stackrel{\rightarrow}{x}) \exp\!\big[c(\theta)d(\stackrel{\rightarrow}{x})\big].
+$$
+
+## Theorem 6.3.1 (cont)
+
+If $c(\theta)$ is an increasing function of $\theta$, then:
+
+- A UMP test of size $\alpha$ for $H_0 : \theta = \theta_0$ versus $H_1 : \theta > \theta_0$ is to reject $H_0$ if
+$$
+d(\stackrel{\rightarrow}{x}) \ge k,
+$$
+where $k$ is chosen so that
+$$
+P\big(d(\stackrel{\rightarrow}{X}) \ge k; \theta_0\big) = \alpha.
+$$
+
+## Theorem 6.3.1 (cont)
+
+If $c(\theta)$ is an increasing function of $\theta$, then:
+
+- A UMP test of size $\alpha$ for $H_0 : \theta = \theta_0$ versus $H_1 : \theta < \theta_0$ is to reject $H_0$ if
+$$
+d(\stackrel{\rightarrow}{x}) \le k,
+$$
+where $k$ is chosen so that
+$$
+P\big(d(\stackrel{\rightarrow}{X}) \le k; \theta_0\big) = \alpha.
+$$
+
+## Theorem 6.3.1 (cont)
+
+If $c(\theta)$ is a decreasing function of $\theta$, then:
+
+- A UMP test of size $\alpha$ for $H_0 : \theta = \theta_0$ versus $H_1 : \theta > \theta_0$ is to reject $H_0$ if
+$$
+d(\stackrel{\rightarrow}{x}) \le k,
+$$
+where $k$ is chosen so that
+$$
+P\big(d(\stackrel{\rightarrow}{X}) \le k; \theta_0\big) = \alpha.
+$$
+
+## Theorem 6.3.1 (cont)
+
+If $c(\theta)$ is a decreasing function of $\theta$, then:
+
+- A UMP test of size $\alpha$ for $H_0 : \theta = \theta_0$ versus $H_1 : \theta < \theta_0$ is to reject $H_0$ if
+$$
+d(\stackrel{\rightarrow}{x}) \ge k,
+$$
+where $k$ is chosen so that
+$$
+P\big(d(\stackrel{\rightarrow}{X}) \ge k; \theta_0\big) = \alpha.
+$$
+
+## Definition 6.4.1 (GLR)
+
+Let $L(\theta)$ be a likelihood for a random sample having joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$ for $\theta \in \Theta$.
+
+The (generalized) likelihood ratio (GLR) is defined to be
+$$
+\lambda(\stackrel{\rightarrow}{x})
+= \frac{\max_{\theta \in \Theta_0} L(\theta)}{\max_{\theta \in \Theta} L(\theta)}
+= \frac{L(\hat{\theta}_0)}{L(\hat{\theta})},
+$$
+where $\hat{\theta}$ denotes the usual “unrestricted MLE” and $\hat{\theta}_0$ denotes the MLE when restricted to the region where $H_0$ is true.
+
+
+The corresponding test is a **uniformly most powerful (UMP) test**.
+
+## The Generalized Likelihood Ratio Test
+
+Suppose that $X_1, X_2, \ldots, X_n$ have joint pdf $f(\stackrel{\rightarrow}{x}; \theta)$ with $\theta \in \Theta$. Let $\Theta_0 \subseteq \Theta$.
+
+The generalized likelihood ratio test for
+$$
+H_0 : \theta \in \Theta_0 \quad \text{versus} \quad H_1 : \theta \in \Theta \setminus \Theta_0
+$$
+is to reject $H_0$, in favor of $H_1$ if
+$$
+\lambda(\stackrel{\rightarrow}{X}) \leq k.
+$$
+
+## The GLR Test (cont)
+
+- $\lambda(\stackrel{\rightarrow}{X})$ is the GLR defined in Definition 6.4.1.
+- $k$ is chosen such that
+$$
+\max_{\theta \in \Theta_0} P\big(\lambda(\stackrel{\rightarrow}{X}) \leq k; \theta\big) = \alpha.
+$$
+
+## Wilks' Theorem
+
+Under certain regularity conditions (given in Section 6.5.1) we have
+$$
+-2 \ln \lambda(\stackrel{\rightarrow}{X}) \stackrel{d}{\to} \chi^2(r - r_0),
+$$
+when $H_0$ is true.
+
+- $r$ is the number of parameters in the model. 
+- $r_0$ is the number of free parameters under the assumption that $H_0$ is true.
+
+## Example 6.5.1
+
+Let $X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} N(\mu, \sigma^2)$ with $\sigma^2$ known.
+
+Consider testing
+$$
+H_0 : \mu = \mu_0 \quad \text{versus} \quad H_1 : \mu \ne \mu_0.
+$$
+
+What distribution should be use to approximate the test statistic?
+
+## Example 6.5.1 (cont)
